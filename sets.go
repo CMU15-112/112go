@@ -11,7 +11,7 @@ func (s IntSet) Add(v int) {
 }
 
 func (s IntSet) Remove(v int) {
-	delete(s, v) 
+	delete(s, v)
 }
 
 func (s IntSet) Has(v int) bool {
@@ -27,19 +27,25 @@ func (s IntSet) String() string {
 
 func (s IntSet) LoadSlice(a []int) {
 	for _, v := range a { s.Add(v) }
-} 
+}
 
 func (s IntSet) ToSlice() []int {
 	result := make([]int, 0)
 	for elem, _ := range s { result = append(result, elem) }
 	return result
-} 
+}
 
 func (s1 IntSet) Union(s2 IntSet) IntSet {
 	result := make(IntSet)
 	for elem, _ := range s1 { result.Add(elem) }
 	for elem, _ := range s2 { result.Add(elem) }
 	return result
+}
+
+func IntSetFromSlice(a []int) IntSet {
+	s := make(IntSet)
+	s.LoadSlice(a)
+	return s
 }
 
 
@@ -68,13 +74,13 @@ func (s StringSet) String() string {
 
 func (s StringSet) LoadSlice(a []string) {
 	for _, v := range a { s.Add(v) }
-} 
+}
 
 func (s StringSet) ToSlice() []string {
 	result := make([]string, 0)
 	for elem, _ := range s { result = append(result, elem) }
 	return result
-} 
+}
 
 func (s1 StringSet) Union(s2 StringSet) StringSet {
 	result := make(StringSet)
@@ -83,3 +89,8 @@ func (s1 StringSet) Union(s2 StringSet) StringSet {
 	return result
 }
 
+func StringSetFromSlice(a []string) StringSet {
+	s := make(StringSet)
+	s.LoadSlice(a)
+	return s
+}

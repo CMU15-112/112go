@@ -5,7 +5,8 @@ import (
 	"fmt"
 )
 
-// Taken from https://github.com/stretchr/stew/blob/master/slice/contains.go
+// Some Contains code taken
+// from https://github.com/stretchr/stew/blob/master/slice/contains.go
 
 // Contains determines if the "contains" argument is contained within the
 // "slice" argument. The slice argument must be a slice or array.
